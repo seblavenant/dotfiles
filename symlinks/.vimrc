@@ -1,3 +1,5 @@
+syntax on
+
 "set number       " display line number
 "set expandtab    " converts tabs to spaces
 set autoindent   " automatically copy indentation from previous line
