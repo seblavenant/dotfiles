@@ -1,0 +1,20 @@
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[user]
+    name = Sébastien LAVENANT
+    email = lavenant@s3b.fr
+[alias]
+    ci = commit
+    st = status
+    co = checkout
+    br = branch
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s%Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[core]
+    editor = vim
+    fileMode = false
+[push]
+    default = current
+[pull]
+    default = current
