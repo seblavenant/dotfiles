@@ -198,3 +198,4 @@
 # alias cd=cd_func
 
 alias ll="ls -la --color=auto"
+alias vi=vim
