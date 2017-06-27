@@ -11,8 +11,10 @@
     co = checkout
     br = branch
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s%Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	diffc = diff --cached
-	amend = commit --amend
+    diffc = diff --cached
+    amend = commit --amend
+    undo = reset HEAD^1
+    clean-branch = "!git branch --merged | grep -v 'master' | grep -v '*' > /tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
 [core]
     editor = vim
     fileMode = false
