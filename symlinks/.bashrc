@@ -207,3 +207,27 @@ parse_git_branch() {
 }
 export PS1="\u@\h:\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\n$ "
 
+# Docker helpers
+dps() {
+    docker ps --format "table {{.ID}}\t{{.Image}}\t{{.CreatedAt}}\t{{.Status}}\t{{.Names}}" "$@"
+}
+
+dex() {
+    local CONTAINER_NAME="$1"
+    local COMMAND="bash"
+
+    if [ "$#" -gt 1 ]; then
+        COMMAND=$(echo "$@" | cut -d' ' -f2-)
+    fi
+
+    docker exec -ti "${CONTAINER_NAME}" ${COMMAND}
+}
+_dex() {
+    source /usr/share/bash-completion/completions/docker
+    local cur="${COMP_WORDS[COMP_CWORD]}"
+    __docker_complete_containers_running
+}
+
+complete -F _dex dex
+
+
