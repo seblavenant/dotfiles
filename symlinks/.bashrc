@@ -202,6 +202,9 @@ alias vi=vim
 alias php='docker run --rm -v "$(pwd)":/var/www -w /var/www php:5.6-cli php'
 alias composer='docker run --rm -v "$(pwd)":/var/www -w /var/www composer/composer'
 
+alias untar='tar -xvf'
+alias untargz='tar -zxvf'
+
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
