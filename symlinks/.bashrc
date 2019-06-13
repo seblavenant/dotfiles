@@ -201,6 +201,7 @@ alias ll="ls -la --color=auto"
 alias vi=vim
 alias php='docker run --rm -v "$(pwd)":/var/www -w /var/www php:5.6-cli php'
 alias composer='docker run --rm -v "$(pwd)":/var/www -w /var/www composer/composer'
+alias docker-clean='docker rm -fv $(docker ps -aq); yes | docker volumes prune; yes | docker system prune'
 
 alias untar='tar -xvf'
 alias untargz='tar -zxvf'
