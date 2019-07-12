@@ -17,6 +17,8 @@
     clean-branch = "!git branch --merged | grep -v 'master' | grep -v '*' > /tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
     branch-clean-merged = "!git branch --merged | grep -v 'master' | grep -v '*' > /tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
     branch-reset = "!git branch | grep -v 'master' | grep -v '*' > /tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -D </tmp/merged-branches"
+    pusho = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
+    cancel = "! git reset .; git co -- .; git clean -fd"
 [core]
     editor = vim
     fileMode = false
