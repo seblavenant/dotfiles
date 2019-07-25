@@ -16,6 +16,7 @@
     undo = reset HEAD^1
     clean-branch = "!git branch --merged | grep -v 'master' | grep -v '*' > /tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
     branch-clean-merged = "!git branch --merged | grep -v 'master' | grep -v '*' > /tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
+    branch-clean-deleted = "!git branch -vv | grep ': disparue]'|  grep -v '*' | awk '{ print $1; }' > /tmp/deleted-branches && vi /tmp/deleted-branches && xargs git branch -D </tmp/deleted-branches"
     branch-reset = "!git branch | grep -v 'master' | grep -v '*' > /tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -D </tmp/merged-branches"
     pusho = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
     cancel = "! git reset .; git co -- .; git clean -fd"
